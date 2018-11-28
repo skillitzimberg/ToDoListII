@@ -16,7 +16,7 @@ namespace ToDoListII.Tests
       ItemsController controller = new ItemsController();
 
       //Act
-      IActionResult view = controller.NewTask("Walk the dog");
+      IActionResult view = controller.Create("Walk the dog");
 
       //Assert
       Assert.IsInstanceOfType(view, typeof(RedirectToActionResult));
@@ -27,7 +27,7 @@ namespace ToDoListII.Tests
     {
       //Arrange
       ItemsController controller = new ItemsController();
-      RedirectToActionResult actionResult = controller.NewTask("Walk the dog") as RedirectToActionResult;
+      RedirectToActionResult actionResult = controller.Create("Walk the dog") as RedirectToActionResult;
 
       //Act
       string result = actionResult.ActionName;
