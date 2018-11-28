@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ToDoListII.Models;
 using System.Collections.Generic;
 using System;
+using ToDoListII.Models;
 
 namespace ToDoListII.Tests
 {
