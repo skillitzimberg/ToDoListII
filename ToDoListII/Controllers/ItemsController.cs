@@ -14,16 +14,30 @@ namespace ToDoListII.Controllers
         }
 
         [HttpGet("/items/new")]
-        public ActionResult NewTaskForm()
+        public ActionResult New()
         {
           return View();
         }
 
         [HttpPost("/items")]
-        public ActionResult NewTask(string description)
+        public ActionResult Create(string description)
         {
           Item newTask = new Item(description);
           return RedirectToAction("Index");
+        }
+
+        [HttpGet("/items/{id}")]
+        public ActionResult Show(int id)
+        {
+          Item item = Item.Find(id);
+          return View(item);
+        }
+
+        [HttpPost("/items/delete")]
+        public ActionResult DeleteAll()
+        {
+          Item.ClearAll();
+          return View();
         }
 
     }
